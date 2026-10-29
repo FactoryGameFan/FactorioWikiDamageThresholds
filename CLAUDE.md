@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Maintenance Rules
 
-- When a PR is merged that adds a new research to `factorio_productivity.py` or a new tree to `factorio_thresholds.py`, update `README.md` to include the new text and `--wiki` commands.
+- When a PR is merged that adds a new research to `factorio_productivity.py` or a new tree to `factorio_thresholds.py`, update `README.md` and the file list in this file with the new text and `--wiki` commands.
 
 ## Preferred Workflow
 
@@ -17,8 +17,8 @@ This is a content repository for contributions to the [Factorio Wiki](https://wi
 - **`WikiArticles/StrongerExplosivesResearch.txt`** - MediaWiki markup source for the "Stronger explosives (research)" wiki page
 - **`WikiArticles/ArtilleryShellDamageResearch.txt`** - MediaWiki markup source for the "Artillery shell damage (research)" wiki page
 - **`FactorioAsteroidDamageCalculator.xlsx`** - Excel export of a Google Sheet used to calculate asteroid damage thresholds. The Google Sheet is the source of truth; the .xlsx export is unreliable. The `Calculator` tab has a `Research Level Required` summary table (columns G-O, rows 15-38).
-- **`factorio_thresholds.py`** - Source of truth for damage threshold calculations. Covers Stronger Explosives (asteroids, biters, spawners), Physical Projectile (gun turret vs Small/Medium asteroids), Laser Weapons (laser turret vs Small/Medium asteroids), Artillery Shell Damage (enemies), and Electric Weapons Damage (Tesla turret vs enemies). Run with `python3 factorio_thresholds.py [tree] [--wiki]`.
-- **`factorio_productivity.py`** - Source of truth for productivity threshold calculations. Covers Steel Plate Productivity (foundry and electric furnace), Processing Unit Productivity (assembling machine 3 and electromagnetic plant), Low Density Structure Productivity (assembling machine 3 and foundry), and Plastic Bar Productivity (chemical plant, biochamber, and cryogenic plant), various module configs. Run with `python3 factorio_productivity.py [research] [--wiki]`.
+- **`factorio_thresholds.py`** - Source of truth for damage threshold calculations. Covers Stronger Explosives (asteroids, biters, spawners), Physical Projectile (gun turret vs Small/Medium asteroids), Laser Weapons (laser turret vs Small/Medium asteroids), Artillery Shell Damage (enemies), Electric Weapons Damage (Tesla turret vs enemies), and Refined Flammables. Run with `python3 factorio_thresholds.py [tree] [--wiki]`.
+- **`factorio_productivity.py`** - Source of truth for productivity threshold calculations. Covers Steel Plate Productivity (foundry and electric furnace), Processing Unit Productivity (assembling machine 3 and electromagnetic plant), Low Density Structure Productivity (assembling machine 3 and foundry), Plastic Bar Productivity (chemical plant, biochamber, and cryogenic plant), Rocket Fuel Productivity (assembling machine 3, biochamber, cryogenic plant), and Rocket Part Productivity (rocket silo), various module configs. Run with `python3 factorio_productivity.py [research] [--wiki]`.
 - **`factorio_mining.py`** - Source of truth for mining productivity threshold calculations. Shows how many mining drills are needed to fully saturate each belt type (Transport, Fast transport, Express transport, Turbo transport) at each research level. Supports Electric mining drill and Big mining drill, with and without quad belt stacking (Gleba research). Run with `python3 factorio_mining.py [--wiki]`.
 - **`factorio_wiki_fetch.py`** - Downloads a Factorio Wiki page via the MediaWiki API and saves the JSON response to `WikiArticles/` for offline use. Accepts a full wiki URL or bare page name. Run with `python3 factorio_wiki_fetch.py <url-or-page-name> [--output FILENAME]`.
 - **`WikiArticles/MiningProductivityResearch.txt`** - MediaWiki markup source for the "Mining productivity (research)" wiki page thresholds section.
@@ -26,6 +26,8 @@ This is a content repository for contributions to the [Factorio Wiki](https://wi
 - **`WikiArticles/ProcessingUnitProductivityResearch.txt`** - MediaWiki markup source for the "Processing unit productivity (research)" wiki page thresholds section.
 - **`WikiArticles/LowDensityStructureProductivityResearch.txt`** - MediaWiki markup source for the "Low density structure productivity (research)" wiki page thresholds section.
 - **`WikiArticles/PlasticBarProductivityResearch.txt`** - MediaWiki markup source for the "Plastic bar productivity (research)" wiki page thresholds section.
+- **`WikiArticles/RocketFuelProductivityResearch.txt`** - MediaWiki markup source for the "Rocket fuel productivity (research)" wiki page thresholds section.
+- **`WikiArticles/RocketPartProductivityResearch.txt`** - MediaWiki markup source for the "Rocket part productivity (research)" wiki page thresholds section.
 - **`WikiArticles/ElectricWeaponsDamageResearch.txt`** - MediaWiki markup source for the "Electric weapons damage (research)" wiki page thresholds section.
 - **`WikiArticles/RefinedFlammablesResearch.txt`** - MediaWiki markup source for the "Refined flammables (research)" wiki page thresholds section.
 - **`WikiArticles/enemies_wiki.json`** - Factorio wiki API response for the Enemies page. Extract wikitext via `data['parse']['wikitext']['*']`. Contains HP and resistance data for biters, spawners, and worms.
